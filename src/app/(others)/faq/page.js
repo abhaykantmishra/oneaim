@@ -124,7 +124,7 @@ export default function FAQPage() {
       <div className="max-w-3xl mx-auto mt-16 p-8 bg-muted rounded-lg text-center">
         <h2 className="text-2xl font-bold mb-4">Still Need Help?</h2>
         <p className="text-muted-foreground mb-6">
-          Can't find the answer you're looking for? Please contact our support team.
+          Can't find the answer you&apos;re looking for? Please contact our support team.
         </p>
         <Button className="bg-primary hover:bg-primary/90" asChild>
           <Link href="/contact">
