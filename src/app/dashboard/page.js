@@ -178,26 +178,26 @@ export default function Dashboard() {
               </Button>
             </div>
             <div className="lg:w-1/2 grid grid-cols-2 gap-4">
-              <div className="bg-white/10 p-6 rounded-lg">
+              <div className="bg-white/10 p-6 rounded-none">
                 <TrendingUp className="h-8 w-8 mb-2" />
                 <h3 className="text-xl font-semibold mb-2">Grow Your Business</h3>
                 <p className="text-white/80">
                   Access millions of potential customers looking for your products and services.
                 </p>
               </div>
-              <div className="bg-white/10 p-6 rounded-lg">
+              <div className="bg-white/10 p-6 rounded-none">
                 <ShoppingBag className="h-8 w-8 mb-2" />
                 <h3 className="text-xl font-semibold mb-2">Easy Management</h3>
                 <p className="text-white/80">
                   Powerful tools to manage your inventory, orders, and customer relationships.
                 </p>
               </div>
-              <div className="bg-white/10 p-6 rounded-lg">
+              <div className="bg-white/10 p-6 rounded-none">
                 <Star className="h-8 w-8 mb-2" />
                 <h3 className="text-xl font-semibold mb-2">Build Reputation</h3>
                 <p className="text-white/80">Earn reviews and ratings to establish trust with potential customers.</p>
               </div>
-              <div className="bg-white/10 p-6 rounded-lg">
+              <div className="bg-white/10 p-6 rounded-none">
                 <Briefcase className="h-8 w-8 mb-2" />
                 <h3 className="text-xl font-semibold mb-2">Sell Anything</h3>
                 <p className="text-white/80">

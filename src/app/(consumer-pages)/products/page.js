@@ -177,7 +177,7 @@ export default function ProductsPage() {
         <div className="flex flex-col lg:flex-row gap-6">
           {/* Filters - Desktop */}
           <div className="hidden lg:block w-64 flex-shrink-0">
-            <div className="sticky top-4 space-y-6">
+            <div className="sticky top-32 space-y-6">
               <div>
                 <h3 className="font-medium mb-4 flex items-center">
                   <Filter className="h-4 w-4 mr-2" />
@@ -291,6 +291,7 @@ export default function ProductsPage() {
 // Update the ProductCard component to use the addToCart function
 function ProductCard({ product, addToCart }) {
   return (
+    <Link href={`/product/${product.id}`}>
     <Card className="overflow-hidden transition-all hover:shadow-md border-red-100 hover:border-primary">
       <div className="relative h-48 bg-white">
         <Image src={product.image || "/placeholder.svg"} alt={product.name} fill className="object-contain p-4" />
@@ -329,12 +330,14 @@ function ProductCard({ product, addToCart }) {
         </div>
       </CardContent>
     </Card>
+    </Link>
   )
 }
 
 // Update the ProductListItem component to use the addToCart function
 function ProductListItem({ product, addToCart }) {
   return (
+    <Link href={`/product/${product.id}`}>
     <Card className="overflow-hidden transition-all hover:shadow-md border-red-100 hover:border-primary">
       <div className="flex flex-col sm:flex-row">
         <div className="relative w-full sm:w-48 h-48">
@@ -376,6 +379,7 @@ function ProductListItem({ product, addToCart }) {
         </CardContent>
       </div>
     </Card>
+    </Link>
   )
 }
 
