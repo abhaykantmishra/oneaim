@@ -1,4 +1,4 @@
-import { ProductCard } from "@/components/ui-components/product-item-card";
+import { ProductCard } from "@/components/ui-components/product-card";
 
 const product = 
 {
