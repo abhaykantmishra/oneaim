@@ -3,8 +3,8 @@
 import { useState } from "react"
 import { ShoppingCart, Plus, Minus, Check } from 'lucide-react'
 import { Button } from "@/components/ui/button"
-import { useToast } from "@/hooks/use-toast"
 import { cn } from "@/lib/utils"
+import { toast } from "sonner"
 
 export function AddToCartButton({
   product,
@@ -17,7 +17,6 @@ export function AddToCartButton({
   const [quantity, setQuantity] = useState(initialQuantity)
   const [isAdding, setIsAdding] = useState(false)
   const [isAdded, setIsAdded] = useState(false)
-  const { toast } = useToast()
 
   const decreaseQuantity = () => {
     if (quantity > 1) {
@@ -37,10 +36,7 @@ export function AddToCartButton({
       setIsAdding(false)
       setIsAdded(true)
       
-      toast({
-        title: "Added to cart",
-        description: `${quantity} × ${product.name} added to your cart`,
-      })
+      toast.success(`${quantity} × ${product.name} added to your cart`,)
       
       // Reset the added state after a delay
       setTimeout(() => {

@@ -3,8 +3,8 @@
 import { useState } from "react"
 import { Heart } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useToast } from "@/hooks/use-toast"
 import { cn } from "@/lib/utils"
+import { toast } from "sonner"
 
 
 export function WishlistButton({
@@ -16,7 +16,6 @@ export function WishlistButton({
 }) {
   const [isInWishlist, setIsInWishlist] = useState(initialState)
   const [isProcessing, setIsProcessing] = useState(false)
-  const { toast } = useToast()
 
   const toggleWishlist = () => {
     setIsProcessing(true)
@@ -27,8 +26,7 @@ export function WishlistButton({
       setIsInWishlist(newState)
       setIsProcessing(false)
 
-      toast({
-        title: newState ? "Added to wishlist" : "Removed from wishlist",
+      toast(newState ? "Added to wishlist" : "Removed from wishlist",{
         description: newState
           ? "This item has been added to your wishlist"
           : "This item has been removed from your wishlist",

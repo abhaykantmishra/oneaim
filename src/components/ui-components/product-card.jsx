@@ -8,11 +8,11 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { WishlistButton } from "@/components/ui/wishlist-button"
-import { AddToCartButton } from "@/components/ui/add-to-cart-button"
-import { ProductRating } from "@/components/ui/product-rating"
-import { PriceDisplay } from "@/components/ui/price-display"
-import { QuickViewDialog } from "@/components/ui/quick-view-dialog"
+import { WishlistButton } from "@/components/ui-components/wishlist-button"
+import { AddToCartButton } from "@/components/ui-components/add-to-cart-button"
+import { ProductRating } from "@/components/ui-components/product-rating"
+import { PriceDisplay } from "@/components/ui-components/price-display"
+import { QuickViewDialog } from "@/components/ui-components/quick-view-dialog"
 
 
 
