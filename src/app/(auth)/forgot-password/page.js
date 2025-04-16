@@ -22,7 +22,7 @@ export default function ForgotPassword() {
     setIsLoading(true)
 
     try {
-      // Replace with your actual API endpoint
+    // Replace with your actual API endpoint
     //   const response = await fetch("https://your-api-endpoint.com/forgot-password", {
     //     method: "POST",
     //     headers: {

@@ -11,7 +11,7 @@ export default function Dashboard() {
       <section className="relative w-full h-[500px] flex items-center justify-center">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-black/70 z-10" />
         <Image
-          src="/placeholder.svg?height=1080&width=1920"
+          src="/placeholder.svg"
           alt="Marketplace Hero"
           fill
           className="object-cover"
@@ -20,7 +20,7 @@ export default function Dashboard() {
         <div className="relative z-20 container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">Your One-Stop Marketplace</h1>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            Find the best products and services from verified sellers
+            Find the best products and services from verified sellers here
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
