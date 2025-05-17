@@ -44,7 +44,7 @@ export default function ProductDetailPage({ params }) {
   }
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="max-w-7xl mx-auto px-4 py-8">
       {/* Breadcrumb */}
       <nav className="text-sm text-muted-foreground mb-6">
         <ol className="flex items-center space-x-2">
@@ -337,6 +337,7 @@ export default function ProductDetailPage({ params }) {
               key={product.id}
               className="overflow-hidden transition-all hover:shadow-md border-red-100 hover:border-primary"
             >
+              <Link href={`/product/${product.id}`}>
               <div className="relative h-48 bg-white">
                 <Image
                   src={product.image || "/placeholder.svg"}
@@ -375,6 +376,7 @@ export default function ProductDetailPage({ params }) {
                   </Button>
                 </div>
               </CardContent>
+              </Link>
             </Card>
           ))}
         </div>

@@ -105,11 +105,11 @@ export function ProductCard({
             <PriceDisplay
               price={product.price}
               originalPrice={product.originalPrice}
-              size={size === "small" ? "sm" : "md"}
+              size={size === "small" ? "sm" : "sm"}
             />
 
             {showAddToCart && (
-              <AddToCartButton product={product} variant="default" size={size === "small" ? "sm" : "default"} />
+              <AddToCartButton product={product} variant="default" size={size === "small" ? "sm" : "sm"} />
             )}
           </div>
         </CardContent>

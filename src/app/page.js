@@ -1,42 +1,24 @@
-"use client"
-
-import Link from "next/link";
-import { redirect } from "next/navigation";
-import { useEffect } from "react";
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
 
 export default function Home() {
-
-  useEffect(() => {
-    redirect("/dashboard")
-  }, [])
-  
-
   return (
-    <div className="h-screen w-full">
-    <h1>Dashboard</h1>
-    <Link href="/dashboard" className="bg-gray-200 mx-10">Dashboard Page</Link>
-    <br />
-
-    <h1>Authentication pages</h1>
-    <Link href="/signup" className="bg-gray-200 mx-10">SignUp Page</Link>
-    <br />
-    <Link href="/signin" className="bg-gray-200 mx-10">SignIn Page</Link>
-    <br />
-    <Link href="/forgot-password" className="bg-gray-200 mx-10">Forgot Password Page</Link>
-    <br />
-
-    <h1>Consumer pages</h1>
-    <Link href="/cart" className="bg-gray-200 mx-10">Cart Page</Link>
-    <br />
-    <Link href="/products" className="bg-gray-200 mx-10">Products Browsing Page</Link>
-    <br />
-    <Link href="/product/abc" className="bg-gray-200 mx-10">Single Product Page</Link>
-    <br />
-
-    <h1>Seller pages</h1>
-    <Link href="/seller-dashboard" className="bg-gray-200 mx-10">Seller Dashboard Page</Link>
-    <br />
-    
+    <div className="flex min-h-screen flex-col items-center justify-center bg-background">
+      <div className="space-y-6 text-center">
+        <h1 className="text-4xl font-bold tracking-tighter text-primary sm:text-5xl">Welcome to our Platform</h1>
+        <p className="mx-auto max-w-[600px] text-muted-foreground md:text-xl">
+          Please sign in to access your account or create a new one.
+        </p>
+        <div className="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+          <Button asChild size="lg">
+            <Link href="/signin">Sign In</Link>
+          </Button>
+          <Button asChild variant="outline" size="lg">
+            <Link href="/signup">Sign Up</Link>
+          </Button>
+        </div>
+      </div>
     </div>
-  );
+  )
 }
+

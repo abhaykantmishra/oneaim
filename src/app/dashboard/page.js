@@ -80,6 +80,7 @@ export default function Dashboard() {
                 key={product.id}
                 className="overflow-hidden transition-all hover:shadow-md border-red-100 hover:border-primary"
               >
+                <Link href={`/product/${product.id}`}>
                 <div className="relative h-48 bg-white">
                   <Image
                     src={product.image || "/placeholder.svg"}
@@ -116,6 +117,7 @@ export default function Dashboard() {
                     </Button>
                   </div>
                 </CardContent>
+                </Link>
               </Card>
             ))}
           </div>

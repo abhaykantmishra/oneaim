@@ -8,7 +8,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-muted border-t">
+    <footer className="bg-muted border-t text-sm">
       {/* Newsletter Section */}
       {/* <div className="bg-primary text-primary-foreground py-12">
         <div className="container mx-auto px-4">

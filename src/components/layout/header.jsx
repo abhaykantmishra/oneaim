@@ -21,7 +21,7 @@ export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [cartCount, setCartCount] = useState(3)
   const [wishlistCount, setWishlistCount] = useState(5)
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(true)
 
   const mainNavItems = [
     { name: "Home", href: "/dashboard" },
@@ -40,7 +40,7 @@ export default function Header() {
     { name: "Services", href: "/services" },
     // { name: "Deals", href: "/deals" },
     { name: "Sell", href: "/seller-dashboard" },
-    // { name: "Contact", href: "/contact" },
+    { name: "Contact", href: "/contact" },
   ]
 
   return (
@@ -77,92 +77,95 @@ export default function Header() {
 
       {/* Main Header */}
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        {/* Mobile Menu */}
-        <Sheet>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon" aria-label="Menu">
-              <Menu className="h-6 w-6" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="left" className="w-[300px] sm:w-[350px]">
-            <div className="flex flex-col h-full">
-              <div className="py-4 border-b">
-                <Link href="/dashboard" className="flex items-center gap-2 font-bold text-xl text-primary">
-                  <ShoppingCart className="h-6 w-6" />
-                  <span>OneAim</span>
-                </Link>
-              </div>
-              <nav className="flex-1 overflow-auto py-4">
-                <ul className="space-y-2">
-                  {mainNavItems.map((item) => (
-                    <li key={item.name}>
-                      {item.children ? (
-                        <div className="space-y-2">
-                          <div className="px-4 py-2 font-medium">{item.name}</div>
-                          <ul className="pl-4 space-y-1">
-                            {item.children.map((child) => (
-                              <li key={child.name}>
-                                <SheetClose asChild>
-                                  <Link
-                                    href={child.href}
-                                    className="block px-4 py-2 text-muted-foreground hover:text-primary"
-                                  >
-                                    {child.name}
-                                  </Link>
-                                </SheetClose>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ) : (
-                        <SheetClose asChild>
-                          <Link
-                            href={item.href}
-                            className={`block px-4 py-2 ${pathname === item.href ? "text-primary font-medium" : "text-foreground hover:text-primary"}`}
-                          >
-                            {item.name}
-                          </Link>
-                        </SheetClose>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-              </nav>
-              <div className="border-t py-4 space-y-4">
-                {isLoggedIn ? (
-                  <div className="px-4 space-y-2">
-                    <div className="font-medium">Hello, John</div>
-                    <Button variant="outline" className="w-full justify-start" asChild>
-                      <Link href="/dashboard">
-                        <User className="mr-2 h-4 w-4" />
-                        My Account
-                      </Link>
-                    </Button>
-                    <Button variant="outline" className="w-full justify-start" onClick={() => setIsLoggedIn(false)}>
-                      <LogOut className="mr-2 h-4 w-4" />
-                      Sign Out
-                    </Button>
-                  </div>
-                ) : (
-                  <div className="px-4 space-y-2">
-                    <Button className="w-full bg-primary hover:bg-primary/90" asChild>
-                      <Link href="/signin">Sign In</Link>
-                    </Button>
-                    <Button variant="outline" className="w-full" asChild>
-                      <Link href="/signup">Create Account</Link>
-                    </Button>
-                  </div>
-                )}
-              </div>
-            </div>
-          </SheetContent>
-        </Sheet>
 
-        {/* Logo */}
-        <Link href="/dashboard" className="flex items-center gap-2">
-          <ShoppingCart className="h-6 w-6 text-primary" />
-          <span className="font-bold text-xl hidden sm:inline-block text-primary">OneAim</span>
-        </Link>
+        {/* Mobile Menu */}
+        <div className="flex flex-row">
+          <Sheet>
+            <SheetTrigger asChild className="md:hidden p-0 m-0">
+              <Button variant="ghost" size="icon" aria-label="Menu">
+                <Menu className="h-6 w-6 ml-0 p-0" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-[300px] sm:w-[350px]">
+              <div className="flex flex-col h-full">
+                <div className="py-4 border-b">
+                  <Link href="/dashboard" className="flex items-center gap-2 font-bold text-xl text-primary">
+                    <ShoppingCart className="h-6 w-6" />
+                    <span>OneAim</span>
+                  </Link>
+                </div>
+                <nav className="flex-1 overflow-auto py-4">
+                  <ul className="space-y-2">
+                    {mainNavItems.map((item) => (
+                      <li key={item.name}>
+                        {item.children ? (
+                          <div className="space-y-2">
+                            <div className="px-4 py-2 font-medium">{item.name}</div>
+                            <ul className="pl-4 space-y-1">
+                              {item.children.map((child) => (
+                                <li key={child.name}>
+                                  <SheetClose asChild>
+                                    <Link
+                                      href={child.href}
+                                      className="block px-4 py-2 text-muted-foreground hover:text-primary"
+                                    >
+                                      {child.name}
+                                    </Link>
+                                  </SheetClose>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ) : (
+                          <SheetClose asChild>
+                            <Link
+                              href={item.href}
+                              className={`block px-4 py-2 ${pathname === item.href ? "text-primary font-medium" : "text-foreground hover:text-primary"}`}
+                            >
+                              {item.name}
+                            </Link>
+                          </SheetClose>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </nav>
+                <div className="border-t py-4 space-y-4">
+                  {isLoggedIn ? (
+                    <div className="px-4 space-y-2">
+                      <div className="font-medium">Hello, John</div>
+                      <Button variant="outline" className="w-full justify-start" asChild>
+                        <Link href="/account">
+                          <User className="mr-2 h-4 w-4" />
+                          My Account
+                        </Link>
+                      </Button>
+                      <Button variant="outline" className="w-full justify-start" onClick={() => setIsLoggedIn(false)}>
+                        <LogOut className="mr-2 h-4 w-4" />
+                        Sign Out
+                      </Button>
+                    </div>
+                  ) : (
+                    <div className="px-4 space-y-2">
+                      <Button className="w-full bg-primary hover:bg-primary/90" asChild>
+                        <Link href="/signin">Sign In</Link>
+                      </Button>
+                      <Button variant="outline" className="w-full" asChild>
+                        <Link href="/signup">Create Account</Link>
+                      </Button>
+                    </div>
+                  )}
+                </div>
+              </div>
+            </SheetContent>
+          </Sheet>
+
+          {/* Logo */}
+          <Link href="/dashboard" className="flex items-center gap-2">
+            <ShoppingCart className="h-6 w-6 text-primary" />
+            <span className="font-bold text-xl hidden sm:inline-block text-primary">OneAim</span>
+          </Link>
+        </div>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
@@ -240,25 +243,25 @@ export default function Header() {
                 </div>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem asChild>
-                  <Link href="/dashboard" className="cursor-pointer">
+                  <Link href="/account" className="cursor-pointer">
                     <User className="mr-2 h-4 w-4" />
                     <span>My Account</span>
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/orders" className="cursor-pointer">
+                  <Link href="/account" className="cursor-pointer">
                     <Package className="mr-2 h-4 w-4" />
                     <span>My Orders</span>
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/notifications" className="cursor-pointer">
+                  <Link href="/account" className="cursor-pointer">
                     <Bell className="mr-2 h-4 w-4" />
                     <span>Notifications</span>
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem asChild>
-                  <Link href="/settings" className="cursor-pointer">
+                  <Link href="/account" className="cursor-pointer">
                     <Settings className="mr-2 h-4 w-4" />
                     <span>Settings</span>
                   </Link>
